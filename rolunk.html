@@ -2,14 +2,14 @@
 <html lang="hu">
 <head>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Rólunk</title>
+    <title>Borsod Case</title>
 </head>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Carter+One&family=MuseoModerno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=MuseoModerno&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -18,18 +18,18 @@
     text-decoration: none;
     list-style: none;
 }
-
 :root{
     --text-color: #000000;
     --bg-color: #e5e5e5;
-    --main-color: #f29494;
+    --main-color: #0BDA51;
     --second-color: #fff;
+    --big-font: 5.5rem;
+    --p-font: 1rem;
 }
 body{
     background: var(--bg-color);
     color: var(--text-color);
 }
-
 header{
     position: fixed;
     top: 0;
@@ -42,46 +42,38 @@ header{
     padding: 27px 9%;
     transition: all ease .55s;
 }
-
 .logo{
     display: flex;
     align-items: center;
     color: var(--text-color);
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
 }
-
 .logo img{
     vertical-align: middle;
-    font-size: 40px;
+    font-size: 35px;
     margin-right: 5px;
 }
-
 .nav-list{
     display: flex;
 }
-
 .nav-list a{
-    font-size: 1rem;
+    font-size: var(--p-font);
     color: var(--text-color);
     font-weight: 600;
     margin: 0 35px;
     transition: all ease .55s;
 }
-
 .nav-list a:hover{
     color: var(--main-color);
 }
-
 .nav-list a.active{
     color: var(--main-color);
 }
-
 .login{
     display: flex;
     align-items: center;
 }
-
 .btn{
     display: inline-block;
     padding: 10px 25px;
@@ -94,13 +86,11 @@ header{
     transition: all ease .55s;
     margin-right: 20px;
 }
-
 .btn:hover{
     background: transparent;
     border: 2px solid var(--text-color);
     color: var(--text-color);
 }
-
 #menu-icon{
     font-size: 40px;
     color: var(--text-color);
@@ -109,14 +99,18 @@ header{
     margin: 15px;
     display: none;
 }
-
 #darkmode{
     font-size: 30px;
     color: var(--text-color);
     cursor: pointer;
     margin-left: 10px;
 }
-
+#last{display: none;}
+body.color{
+    --text-color: #fff;
+    --bg-color: #08162a;
+    --second-color: #2b3544;
+}
 .team{
     text-align: center;
     display: flex;
@@ -125,50 +119,43 @@ header{
     flex-wrap: wrap;
     margin-bottom: 40px;
 }
-
 h1{
     text-transform: uppercase;
     margin-bottom: 60px;
-    color: white;
+    color: var(--text-color);
     font-size: 40px;
     text-align: center;
 }
-
 .border{
     display: block;
-    background: #3498db;
+    background-color: gray;
     width: 160px;
     height: 3px;
     margin: auto;
     margin-bottom: 40px;
 }
-
 .card{
     position: relative;
     width: 300px;
     padding-bottom: 50px;
-    background-color: white;
+    background: var( --second-color);
     border-radius: 10px;
     overflow: hidden;
     margin: 0 30px;
     margin-bottom: 70px;
 }
-
 .card .text{
     padding: 15px;
 }
-
 .card p{
     font-size: 16px;
     line-height: 30px;
 }
-
 .card h2{
     font-size: 32px;
     margin-bottom: 20px;
 }
-
-.card .btn{
+.card .btn-plus{
     margin: 0 auto;
     width: 100px;
     height: 100px;
@@ -186,11 +173,9 @@ h1{
     z-index: 9;
     transition: all ease 0.5s;
 }
-
-.card .btn:hover{
+.card .btn-plus:hover{
     background-color: darkgray;
 }
-
 .card .img img{
     margin: auto;
     width: 160px;
@@ -200,11 +185,9 @@ h1{
     display: inline-block;
     object-fit: cover;
 }
-
 .card .img{
     margin-top: 30px;
 }
-
 .more-text{
     position: absolute;
     bottom: -120%;
@@ -214,59 +197,103 @@ h1{
     width: 100%;
     overflow-y: auto;
     transition: all ease 0.7s;
-    background-color: limegreen;
-    
+    background: var(--main-color);
 }
-
 .more-text.active{
     bottom: 0px;
     color: white;
     text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-body.color{
-    --text-color: #fff;
-    --bg-color: #08162a;
-    --second-color: #2b3544;
-}
-@media (max-width: 1230px){
-    .box{
-        grid-template-columns: 1fr;
-        height: auto;
-    }
-    .text-box{
-        order: 2;
-    }
-    section{
-        padding: 50px 5%;
-    }
-}
-
 section{
-    padding-top: 7%;
+    padding: 0 5%;
+    margin-top: 130px;
 }
-
+@media (max-width: 1600px){
+    header{
+        padding: 13px 3%;
+    }
+}
+@media (max-width: 1400px){
+    :root{
+        --big-font: 4rem;
+        --p-font: 15px;
+    }
+}
+@media (max-width: 1160px){
+    header{
+        padding: 10px 3%;
+        background: var(--second-color);
+    }
+    #menu-icon{display: initial;}
+    .nav-list{
+        position: absolute;
+        top: -700px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background: #000;
+        transition: all ease .55s;
+        text-align: left;
+    }
+    .nav-list a{
+        display: block;
+        font-size: 23px;
+        font-weight: 400;
+        margin: 0.8rem 1.8rem;
+        color: var(--second-color)
+    }
+    .nav-list.open{top: 100%;}
+}
+@media (max-width: 635px){
+    .btn{
+        padding: 6px 14px;
+        margin-right: 8px;
+    }
+    :root{
+        --big-font: 3rem;
+        --p-font: 14px;
+    }
+    .logo{font-size: 30px;}
+    .logo img{width: 50px;}
+    #menu-icon{margin-right: 5px;}
+}
+@media (max-width: 520px){
+    .btn{
+        padding: 4px 10px;
+        margin-right: 0px;
+    }
+    :root{
+        --big-font: 2rem;
+        --p-font: 12px;
+    }
+    .nav-list a{
+        font-size: 18px;
+    }
+    .logo{font-size: 24px;}
+    .logo img{width: 40px;}
+    #menu-icon{
+        margin-right: 0;
+        margin-left: 5px;
+    }
+}
+@media (max-width: 440px){
+    #last{display: block;}
+    .btn {display: none;}
+}
+@media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+}
 </style>
 <body>
     <header>
-        <a href="" class="logo"><img src="logo.png">Borsod Case</a>
+        <a href="#" class="logo"><img src="logo.png">Borsod Case</a>
         <ul class="nav-list">
-            <li><a href="bkr.html" class="active">Főoldal</a></li>
-            <li><a href="termekek.html">Termékek</a></li>
-            <li><a href="segito.html">Szolgáltatások</a></li>
-            <li><a href="rolunk.html">Rólunk</a></li>
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="#">Termékek</a></li>
+            <li><a href="#">Szolgáltatások</a></li>
+            <li><a href="rolunk.html" class="active">Rólunk</a></li>
+            <li id="last"><a href="#">Bejelentkezés</a></li>
         </ul>
         <div class="login">
             <a href="" class="btn">Bejelentkezés</a>
@@ -275,16 +302,16 @@ section{
         </div>
     </header>
     <section class="box">
-    <h1>Borsod case team</h1>
+    <h1>Borsod Case Team</h1>
       <span class="border"></span>
       <div class="team">
           <div class="card">
               <div class="img">
-                  <img src="">
+                  <img src="p01.jpg">
               </div>
               <div class="text">
                   <h2>Ruszkai László</h2>
-                  <div class="btn">
+                  <div class="btn-plus">
                       <i class="fa fa-plus" aria-hidden="true"></i>
                   </div>
               </div>
@@ -293,14 +320,13 @@ section{
                   <p>Projekt tervező és kivitelező</p>
               </div>
           </div>
-
           <div class="card">
             <div class="img">
-                <img src="">
+                <img src="p02.jpeg">
             </div>
             <div class="text">
                 <h2>Kovács Martin</h2>
-                <div class="btn">
+                <div class="btn-plus">
                     <i class="fa fa-plus" aria-hidden="true"></i>
                 </div>
             </div>
@@ -312,60 +338,35 @@ section{
       </div>
     </section>
     <script>
-    let darkmode = document.querySelector('#darkmode');
-
-    darkmode.onclick = () => {
-        if(darkmode.classList.contains('bx-moon')){
-            darkmode.classList.replace('bx-moon', 'bx-sun');
-            document.body.classList.add('color');
-        }
-        else {
-            darkmode.classList.replace('bx-sun', 'bx-moon');
-            document.body.classList.remove('color');
-        }
-    }  
-    </script>
-    <script>
-        function myFunction() {
-                var x=document.getElementById("myTopnav");
-                if (x.className === "nav") {
-                    x.className += " responsive";
-                } else {
-                    x.className = "nav";
-                }
-        }
-    
-        var slideIndex = 0;
-        showSlides();
-        function currentSlide(n) {
-            showSlides(slideIndex=n);
-        }
-    
-        function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
+        let darkmode = document.querySelector('#darkmode');
+        darkmode.onclick = () => {
+            if(darkmode.classList.contains('bx-moon')){
+                darkmode.classList.replace('bx-moon', 'bx-sun');
+                document.body.classList.add('color');
             }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
+            else {
+                darkmode.classList.replace('bx-sun', 'bx-moon');
+                document.body.classList.remove('color');
             }
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-            setTimeout(showSlides, 3000);
-        }
+        };
+        let menu = document.querySelector('#menu-icon');
+        let navlist = document.querySelector('.nav-list');
+        menu.onclick = () => {
+            menu.classList.toggle('bx-x');
+            navlist.classList.toggle('open');
+        };
+        window.onscroll = () => {
+            menu.classList.remove('bx-x');
+            navlist.classList.remove('open');
+        };
     </script>
-     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        $(document).ready(function(){
-            $(".btn").on("click", function(){
-                $(this).parent().parent().find(".more-text").toggleClass("active");
-            });
-        }); 
+         $(document).ready(function(){
+             $(".btn-plus").on("click", function(){
+                 $(this).parent().parent().find(".more-text").toggleClass("active");
+             });
+         }); 
     </script>
 </body>
 </html>
