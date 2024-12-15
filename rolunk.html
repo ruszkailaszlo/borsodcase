@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Rólunk</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Carter+One&family=MuseoModerno&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'MuseoModerno', cursive;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root{
+    --text-color: #000000;
+    --bg-color: #e5e5e5;
+    --main-color: #f29494;
+    --second-color: #fff;
+}
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 27px 9%;
+    transition: all ease .55s;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.logo img{
+    vertical-align: middle;
+    font-size: 40px;
+    margin-right: 5px;
+}
+
+.nav-list{
+    display: flex;
+}
+
+.nav-list a{
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 600;
+    margin: 0 35px;
+    transition: all ease .55s;
+}
+
+.nav-list a:hover{
+    color: var(--main-color);
+}
+
+.nav-list a.active{
+    color: var(--main-color);
+}
+
+.login{
+    display: flex;
+    align-items: center;
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 25px;
+    color: var(--bg-color);
+    background: var(--main-color);
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    transition: all ease .55s;
+    margin-right: 20px;
+}
+
+.btn:hover{
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+}
+
+#menu-icon{
+    font-size: 40px;
+    color: var(--text-color);
+    z-index: 1001;
+    cursor: pointer;
+    margin: 15px;
+    display: none;
+}
+
+#darkmode{
+    font-size: 30px;
+    color: var(--text-color);
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.team{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+h1{
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+
+.border{
+    display: block;
+    background: #3498db;
+    width: 160px;
+    height: 3px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.card{
+    position: relative;
+    width: 300px;
+    padding-bottom: 50px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 30px;
+    margin-bottom: 70px;
+}
+
+.card .text{
+    padding: 15px;
+}
+
+.card p{
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.card h2{
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.card .btn{
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    position: absolute;
+    border-radius: 50%;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    z-index: 9;
+    transition: all ease 0.5s;
+}
+
+.card .btn:hover{
+    background-color: darkgray;
+}
+
+.card .img img{
+    margin: auto;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    object-fit: cover;
+}
+
+.card .img{
+    margin-top: 30px;
+}
+
+.more-text{
+    position: absolute;
+    bottom: -120%;
+    left: 0;
+    height: 100%;
+    padding: 20px;
+    width: 100%;
+    overflow-y: auto;
+    transition: all ease 0.7s;
+    background-color: limegreen;
+    
+}
+
+.more-text.active{
+    bottom: 0px;
+    color: white;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+body.color{
+    --text-color: #fff;
+    --bg-color: #08162a;
+    --second-color: #2b3544;
+}
+@media (max-width: 1230px){
+    .box{
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .text-box{
+        order: 2;
+    }
+    section{
+        padding: 50px 5%;
+    }
+}
+
+section{
+    padding-top: 7%;
+}
+
+</style>
+<body>
+    <header>
+        <a href="" class="logo"><img src="logo.png">Borsod Case</a>
+        <ul class="nav-list">
+            <li><a href="bkr.html" class="active">Főoldal</a></li>
+            <li><a href="termekek.html">Termékek</a></li>
+            <li><a href="segito.html">Szolgáltatások</a></li>
+            <li><a href="rolunk.html">Rólunk</a></li>
+        </ul>
+        <div class="login">
+            <a href="" class="btn">Bejelentkezés</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+            <div class="bx bx-moon" id="darkmode"></div>
+        </div>
+    </header>
+    <section class="box">
+    <h1>Borsod case team</h1>
+      <span class="border"></span>
+      <div class="team">
+          <div class="card">
+              <div class="img">
+                  <img src="">
+              </div>
+              <div class="text">
+                  <h2>Ruszkai László</h2>
+                  <div class="btn">
+                      <i class="fa fa-plus" aria-hidden="true"></i>
+                  </div>
+              </div>
+              <div class="more-text">
+                  <h2>Ruszkai László</h2>
+                  <p>Projekt tervező és kivitelező</p>
+              </div>
+          </div>
+
+          <div class="card">
+            <div class="img">
+                <img src="">
+            </div>
+            <div class="text">
+                <h2>Kovács Martin</h2>
+                <div class="btn">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="more-text">
+                <h2>Kovács Martin</h2>
+                <p>Projekt tervező és kivitelező</p>
+            </div>
+        </div>
+      </div>
+    </section>
+    <script>
+    let darkmode = document.querySelector('#darkmode');
+
+    darkmode.onclick = () => {
+        if(darkmode.classList.contains('bx-moon')){
+            darkmode.classList.replace('bx-moon', 'bx-sun');
+            document.body.classList.add('color');
+        }
+        else {
+            darkmode.classList.replace('bx-sun', 'bx-moon');
+            document.body.classList.remove('color');
+        }
+    }  
+    </script>
+    <script>
+        function myFunction() {
+                var x=document.getElementById("myTopnav");
+                if (x.className === "nav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "nav";
+                }
+        }
+    
+        var slideIndex = 0;
+        showSlides();
+        function currentSlide(n) {
+            showSlides(slideIndex=n);
+        }
+    
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 3000);
+        }
+    </script>
+     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".btn").on("click", function(){
+                $(this).parent().parent().find(".more-text").toggleClass("active");
+            });
+        }); 
+    </script>
+</body>
+</html>

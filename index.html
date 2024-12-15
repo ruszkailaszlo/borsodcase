@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borsod Case</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><img src="logo.png">Borsod Case</a>
+        <ul class="nav-list">
+            <li><a href="index.html" class="active">Főoldal</a></li>
+            <li><a href="#">Termékek</a></li>
+            <li><a href="#">Szolgáltatások</a></li>
+            <li><a href="rolunk.html">Rólunk</a></li>
+            <li id="last"><a href="rolunk.html">Bejelentkezés</a></li>
+        </ul>
+        <div class="login">
+            <a href="" class="btn">Bejelentkezés</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+            <div class="bx bx-moon" id="darkmode"></div>
+        </div>
+    </header>
+    <section class="box">
+        <div class="text-box">
+            <h1>Telefontokok</h1>
+            <h4>Nézz szét nálunk</h4>
+            <p>Széles választék, kedvező árak</p>
+            <div class="container">
+                <div class="container-box">
+                    <h3>Apple</h3>
+                    <h5>telefontok</h5>
+                    <img src="02.png">
+                </div>
+                <div class="container-box">
+                    <h3>Samsung</h3>
+                    <h5>telefontok</h5>
+                    <img src="02.png">
+                </div>
+                <div class="container-box">
+                    <h3>Xiaomi</h3>
+                    <h5>telefontok</h5>
+                    <img src="02.png">
+                </div>
+            </div>
+        </div>
+        <div class="mainmenu-img">
+            <img src="01.png">
+        </div>
+    </section>
+<script>
+    let darkmode = document.querySelector('#darkmode');
+    darkmode.onclick = () => {
+        if(darkmode.classList.contains('bx-moon')){
+            darkmode.classList.replace('bx-moon', 'bx-sun');
+            document.body.classList.add('color');
+        }
+        else {
+            darkmode.classList.replace('bx-sun', 'bx-moon');
+            document.body.classList.remove('color');
+        }
+    };
+    let menu = document.querySelector('#menu-icon');
+    let navlist = document.querySelector('.nav-list');
+    menu.onclick = () => {
+        menu.classList.toggle('bx-x');
+        navlist.classList.toggle('open');
+    };
+    window.onscroll = () => {
+        menu.classList.remove('bx-x');
+        navlist.classList.remove('open');
+    };
+</script>
+</body>
+</html>
